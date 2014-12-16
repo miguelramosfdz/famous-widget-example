@@ -1,0 +1,19 @@
+{
+  "name": "famous-widget-example",
+  "version": "0.0.0",
+  "authors": [
+    "edgarmartinez <admin@orchid1software.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "famous": "~0.3.1",
+    "requirejs": "~2.1.15"
+  }
+}
