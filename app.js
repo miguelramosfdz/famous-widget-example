@@ -5,10 +5,15 @@ define(function (require, exports, module) {
     var Engine = require("famous/core/Engine"),
         MyWidget = require("MyWidget");
 
-    var context = Engine.createContext();
+    var context = Engine.createContext(),
+        widget = new MyWidget();
 
 
     context.setPerspective(1000);
 
-    context.add(new MyWidget());
+    context.add(widget);
+
+    widget.eventOutput.on("update", function (event) {
+        console.log("We are scrolling");
+    });
 });

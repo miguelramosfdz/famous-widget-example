@@ -2,7 +2,8 @@ define(function (require, exports, module) {
 
     "use strict";
 
-    var Surface = require("famous/core/Surface");
+    var Surface = require("famous/core/Surface"),
+        ScrollSync = require("famous/inputs/ScrollSync");
 
     function MyWidget() {
 
@@ -11,7 +12,9 @@ define(function (require, exports, module) {
             properties: {
                 border: "1px red solid"
             }
-        })
+        });
+
+        _addEventOutput.call(this);
     }
 
 
@@ -30,6 +33,14 @@ define(function (require, exports, module) {
             ]
         }
     };
+
+
+    function _addEventOutput() {
+
+        this.eventOutput = new ScrollSync();
+
+        this.surface.pipe(this.eventOutput);
+    }
 
 
     module.exports = MyWidget;
